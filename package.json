@@ -1,0 +1,50 @@
+{
+  "name": "reactjs-2019q1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/var-bin/reactjs-2019q1.git"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "html5",
+    "css3",
+    "webpack",
+    "wtf"
+  ],
+  "author": "Vitalii Rybka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/var-bin/reactjs-2019q1/issues"
+  },
+  "homepage": "https://github.com/var-bin/reactjs-2019q1#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^5.15.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "parcel-bundler": "^1.12.0",
+    "prettier": "1.16.4",
+    "stylelint": "^9.10.1",
+    "stylelint-config-standard": "^18.2.0",
+    "typescript": "^3.3.3333"
+  }
+}
