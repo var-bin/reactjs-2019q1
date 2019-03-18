@@ -1,5 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
+import { setConfig } from 'react-hot-loader';
+import { hot } from 'react-hot-loader/root';
 
 import {
   CreateElement,
@@ -8,20 +9,22 @@ import {
   FunctionalComponent
 } from './ht1';
 
-const app = document.getElementById('app');
+setConfig({
+  ignoreSFC: true, // RHL will be __completely__ disabled for SFC
+  pureRender: true // RHL will not change render method
+});
 
-export function App() {
-  ReactDOM.render(
-    <div>
-      <CreateElement />
-      <ReactComponent />
-      <ReactPureComponent />
-      <ReactPureComponent />
-      <ReactPureComponent />
-      <FunctionalComponent
-        text="This is a functional component!"
-      />
-    </div>,
-    app
-  );
-}
+const App = () => (
+  <div>
+    <CreateElement />
+    <ReactComponent />
+    <ReactPureComponent />
+    <ReactPureComponent />
+    <ReactPureComponent />
+    <FunctionalComponent
+      text="This is a functional component!"
+    />
+  </div>
+);
+
+export default hot(App);
