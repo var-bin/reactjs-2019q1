@@ -1,9 +1,8 @@
-
 import React from 'react';
 import { shallow } from 'enzyme';
 import { CreateElement } from './CreateElement';
 
-describe('CreateElement component ', () => {
+describe('CreateElement component: ', () => {
   it('Should render the right text: ', () => {
     const wrapper = shallow(<CreateElement />);
 
