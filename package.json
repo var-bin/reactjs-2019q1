@@ -12,9 +12,7 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors",
     "start": "webpack-dev-server --env.NODE_ENV=development --open",
-    "build": "webpack -p --env.NODE_ENV=production",
-    "watch": "webpack --watch",
-    "server": "node server.js"
+    "build": "webpack -p --env.NODE_ENV=production"
   },
   "repository": {
     "type": "git",
