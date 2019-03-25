@@ -1,15 +1,23 @@
-const Bundler = require('parcel-bundler');
-const path = require('path');
 const app = require('express')();
+require('console-stamp')(console, 'HH:MM:ss.l');
 
-const file = path.join(__dirname, 'index.html'); // Pass an absolute path to the entrypoint here
-const options = {}; // See options section of api docs, for the possibilities
+const PORT = 8080;
 
-// Initialize a new bundler using a file and options
-const bundler = new Bundler(file, options);
+(function() {
+  const webpack = require('webpack');
+  const webpackDevMiddleware = require('webpack-dev-middleware');
+  const webpackHotMiddleware = require('webpack-hot-middleware');
+  const config = require('./webpack.config.js');
+  const compiler = webpack(config);
 
-// Let express use the bundler middleware, this will let Parcel handle every request over your express server
-app.use(bundler.middleware());
+  app.use(webpackDevMiddleware(compiler, {
+    publicPath: config.output.publicPath
+  }));
+
+  app.use(webpackHotMiddleware(compiler));
+})();
 
 // Listen on port 8080
-app.listen(8080);
+app.listen(PORT, () => {
+  console.log(`Example app listening on port ${PORT}!\n`);
+});
