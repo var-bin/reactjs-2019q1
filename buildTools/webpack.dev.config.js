@@ -5,6 +5,7 @@ const CONSTANTS = require('./constants');
 
 module.exports = {
   mode: CONSTANTS.DEVELOPMENT_MODE,
+  watch: true,
   devtool: CONSTANTS.DEVTOOL,
   devServer: {
     contentBase: PATHS.DIST,
