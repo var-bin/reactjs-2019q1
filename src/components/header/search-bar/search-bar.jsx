@@ -14,14 +14,12 @@ export function SearchBar(props) {
       </div>
       <div className="column is-12">
         <form className="app__header-search-bar-form">
-          <div className="columns is-multiline">
-            <div className="column is-12">
-              <div className="field">
-                <div className="control">
-                  <input type="text" className="input" />
-                </div>
-              </div>
+          <div className="field">
+            <div className="control">
+              <input type="text" className="input" />
             </div>
+          </div>
+          <div className="columns is-multiline">
             <div className="column">
               <div className="field is-grouped">
                 <div className="control app__header-search-by">
@@ -49,7 +47,7 @@ export function SearchBar(props) {
           </div>
         </form>
       </div>
-      <div className="column is-12">
+      <div className="column">
         <SearchBarStatusLine />
       </div>
     </div>

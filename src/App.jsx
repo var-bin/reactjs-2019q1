@@ -2,7 +2,10 @@ import React from 'react';
 import { setConfig } from 'react-hot-loader';
 import { hot } from 'react-hot-loader/root';
 
-import { Header } from './components';
+import {
+  Header,
+  MovieList
+} from './components';
 
 setConfig({
   ignoreSFC: true, // RHL will be __completely__ disabled for SFC
@@ -11,9 +14,11 @@ setConfig({
 
 const App = () => (
   <section className="section">
-    <div className="container">
-      <Header />
-    </div>
+    <Header />
+
+    <hr />
+
+    <MovieList />
   </section>
 );
 
