@@ -27,7 +27,7 @@ export class MovieTile extends Component {
   Phasellus nec iaculis mauris. <a>@bulmaio</a>.
   <a href="#">#css</a> <a href="#">#responsive</a>
             <br />
-            <time datetime="2016-1-1">11:09 PM - 1 Jan 2019</time>
+            <time dateTime="2019-1-1">11:09 PM - 1 Jan 2019</time>
           </div>
         </div>
       </div>
