@@ -4,7 +4,8 @@ import { hot } from 'react-hot-loader/root';
 
 import {
   Header,
-  MovieList
+  MovieList,
+  ErrorBoundary
 } from './components';
 
 setConfig({
@@ -13,13 +14,15 @@ setConfig({
 });
 
 const App = () => (
-  <section className="section">
-    <Header />
+  <ErrorBoundary>
+    <section className="section">
+      <Header />
 
-    <hr />
+      <hr />
 
-    <MovieList />
-  </section>
+      <MovieList />
+    </section>
+  </ErrorBoundary>
 );
 
 export default hot(App);

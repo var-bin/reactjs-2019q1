@@ -1,36 +1,46 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export class MovieTile extends Component {
-  render() {
-    return (
-      <div className="card">
-        <div className="card-image">
-          <figure className="image is-4by3">
-            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image" />
-          </figure>
-        </div>
-        <div className="card-content">
-          <div className="media">
-            <div className="media-left">
-              <figure className="image is-48x48">
-                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image" />
-              </figure>
-            </div>
-            <div className="media-content">
-              <p className="title is-4">John Smith</p>
-              <p className="subtitle is-6">@johnsmith</p>
-            </div>
-          </div>
+export const MovieTile = (props) => {
+  const {
+    movieData: {
+      id,
+      title,
+      poster_path: imgPath,
+      release_date: releaseDate,
+      genres
+    }
+  } = props;
 
-          <div className="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-  <a href="#">#css</a> <a href="#">#responsive</a>
-            <br />
-            <time dateTime="2019-1-1">11:09 PM - 1 Jan 2019</time>
+  const MovieGenres = () => genres.map(genre => (
+    <a href={`#${genre}`} key={`${id}-${genre}`}>
+      &nbsp;#
+      {genre}
+    </a>
+  ));
+
+  // Uncomment the line bellow for testing `ErrorBoundary` component
+  // throw new Error('Ooops, smth went wrong!!!');
+
+  return (
+    <div className="card">
+      <div className="card-image">
+        <figure className="image is-4by3">
+          <img src={imgPath} alt="Alt text" />
+        </figure>
+      </div>
+      <div className="card-content">
+        <div className="content">
+          <h5>
+            {title}
+          </h5>
+          <div>
+            <MovieGenres />
           </div>
+          <time dateTime={releaseDate}>
+            {releaseDate}
+          </time>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
