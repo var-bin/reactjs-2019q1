@@ -3,11 +3,10 @@ import { setConfig } from 'react-hot-loader';
 import { hot } from 'react-hot-loader/root';
 
 import {
-  CreateElement,
-  ReactComponent,
-  ReactPureComponent,
-  FunctionalComponent
-} from './ht1';
+  Header,
+  MovieList,
+  ErrorBoundary
+} from './components';
 
 setConfig({
   ignoreSFC: true, // RHL will be __completely__ disabled for SFC
@@ -15,16 +14,15 @@ setConfig({
 });
 
 const App = () => (
-  <div>
-    <CreateElement />
-    <ReactComponent />
-    <ReactPureComponent />
-    <ReactPureComponent />
-    <ReactPureComponent />
-    <FunctionalComponent
-      text="This is a functional component!"
-    />
-  </div>
+  <ErrorBoundary>
+    <section className="section">
+      <Header />
+
+      <hr />
+
+      <MovieList />
+    </section>
+  </ErrorBoundary>
 );
 
 export default hot(App);

@@ -28,8 +28,7 @@ module.exports = function (env) {
     },
     output: {
       filename: PATHS.FILENAME,
-      path: PATHS.DIST,
-      publicPath: PATHS.PUBLIC_PATH
+      path: PATHS.DIST
     },
     plugins: [
       new CleanWebpackPlugin(),
@@ -45,6 +44,15 @@ module.exports = function (env) {
           test: /\.jsx?$/,
           exclude: /node_modules/,
           loader: 'babel-loader'
+        },
+        {
+          test: /\.scss$/,
+          use: [
+            'style-loader', // creates style nodes from JS strings
+            'css-loader', // translates CSS into CommonJS,
+            'postcss-loader',
+            'sass-loader' // compiles Sass to CSS, using Node Sass by default
+          ]
         },
         {
           test: /\.css$/,

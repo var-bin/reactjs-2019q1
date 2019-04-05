@@ -1,0 +1,10 @@
+.app__header-search-by {
+  align-self: center;
+}
+
+.app__header-search-bar-form {
+  .column:last-child {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
