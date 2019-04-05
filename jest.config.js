@@ -22,7 +22,7 @@ module.exports = {
   testEnvironment: 'jsdom',
 
   // The glob patterns Jest uses to detect test files
-  testMatch: ['<rootDir>/**/?*.test.js?(x)'],
+  testMatch: ['<rootDir>/**/*.test.js?(x)'],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   testPathIgnorePatterns: ['\\\\node_modules\\\\'],
@@ -34,5 +34,7 @@ module.exports = {
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
 
   // Indicates whether each individual test should be reported during the run
-  verbose: false
+  verbose: false,
+
+  setupFilesAfterEnv: ['jest-dom/extend-expect']
 };
