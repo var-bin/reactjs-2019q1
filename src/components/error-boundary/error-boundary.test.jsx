@@ -2,11 +2,11 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { ErrorBoundary } from './error-boundary';
 
-const FakeComponent = () => (<div>I'm a Fake Component!</div>);
-
-const FakeComponentWithErrors = () => {
-  throw new Error('Ooops, there is error!');
-};
+const FakeComponent = () => (
+  <div>
+    I am a Fake Component!
+  </div>
+);
 
 describe('ErrorBoundary component: ', () => {
   it('Should render children if there isn\'t any error', () => {
@@ -29,16 +29,6 @@ describe('ErrorBoundary component: ', () => {
 
     wrapper.find(FakeComponent).simulateError(error);
 
-    // console.log(wrapper.html());
-
-    expect(wrapper).to.deep.equal([
-      error,
-      {
-        componentStack: `
-        in Something (created by ErrorBoundary)
-        in ErrorBoundary (created by WrapperComponent)
-        in WrapperComponent`
-      }
-    ]);
+    expect(wrapper.html()).toMatchSnapshot();
   });
 });
