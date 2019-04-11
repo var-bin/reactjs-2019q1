@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+
 import { ErrorBoundary } from './error-boundary';
 
 const FakeComponent = () => (
@@ -9,23 +10,22 @@ const FakeComponent = () => (
 );
 
 describe('ErrorBoundary component:', () => {
-  it('Should render children if there isn\'t any error:', () => {
-    const wrapper = shallow(
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = shallow(
       <ErrorBoundary>
         <FakeComponent />
       </ErrorBoundary>
     );
+  });
 
+  it('Should render children if there isn\'t any error:', () => {
     expect(wrapper.is(FakeComponent)).toBeTruthy();
   });
 
   it('Should show error message:', () => {
     const error = new Error('hi!');
-    const wrapper = shallow(
-      <ErrorBoundary>
-        <FakeComponent />
-      </ErrorBoundary>
-    );
 
     wrapper.find(FakeComponent).simulateError(error);
 
