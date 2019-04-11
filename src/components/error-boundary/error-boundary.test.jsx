@@ -8,8 +8,8 @@ const FakeComponent = () => (
   </div>
 );
 
-describe('ErrorBoundary component: ', () => {
-  it('Should render children if there isn\'t any error', () => {
+describe('ErrorBoundary component:', () => {
+  it('Should render children if there isn\'t any error:', () => {
     const wrapper = shallow(
       <ErrorBoundary>
         <FakeComponent />
@@ -19,7 +19,7 @@ describe('ErrorBoundary component: ', () => {
     expect(wrapper.is(FakeComponent)).toBeTruthy();
   });
 
-  it('Should show error message', () => {
+  it('Should show error message:', () => {
     const error = new Error('hi!');
     const wrapper = shallow(
       <ErrorBoundary>
