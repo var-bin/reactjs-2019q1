@@ -5,12 +5,12 @@ import { MovieGenre } from './movie-genre';
 
 describe('MovieGenre component:', () => {
   let wrapper;
-  const genre = 'my awesome genre';
+  const genreMock = 'my awesome genre';
 
   beforeEach(() => {
     wrapper = shallow(
       <div>
-        <MovieGenre genre={genre} />
+        <MovieGenre genre={genreMock} />
       </div>
     );
   });
@@ -20,8 +20,12 @@ describe('MovieGenre component:', () => {
   });
 
   it('Should have right props:', () => {
-    const { genre: localGenre } = wrapper.find(MovieGenre).props();
+    const { genre } = wrapper.find(MovieGenre).props();
 
-    expect(localGenre).toEqual(genre);
+    expect(genre).toEqual(genre);
+  });
+
+  it('Should have right text:', () => {
+    expect(wrapper.find(MovieGenre).html()).toMatchSnapshot();
   });
 });
