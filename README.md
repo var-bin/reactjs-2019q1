@@ -14,6 +14,8 @@
 * `yarn test`
 * `yarn test:watch // watch mode`
 * `yarn test:coverage // add coverage`
+* `yarn e2e // e2e tests via cypress`
+* `yarn e2e:open // e2e tests via cypress and open browser`
 
 ## List of tasks
 * ### HT1
@@ -24,3 +26,8 @@
 * ### HT3 - Components:
   * A [bunch of components](https://github.com/var-bin/reactjs-2019q1/tree/reactjs-2019q1-ht3/src/components)
   * [Error Boundaries](https://github.com/var-bin/reactjs-2019q1/tree/reactjs-2019q1-ht3/src/components/error-boundary) Component
+* ### HT4 - Testing:
+  * A [bunch of unit-tests](https://github.com/var-bin/reactjs-2019q1/tree/reactjs-2019q1-ht4/src)
+  * A [simple e2e test](https://github.com/var-bin/reactjs-2019q1/blob/reactjs-2019q1-ht4/src/App.e2e.js)
+  * [Config](https://github.com/var-bin/reactjs-2019q1/blob/reactjs-2019q1-ht4/.travis.yml) for [Travis CI](https://travis-ci.org/)
+  * [Config](https://github.com/var-bin/reactjs-2019q1/blob/reactjs-2019q1-ht4/appveyor.yml) for [AppVeyor CI](https://travis-ci.org/)
