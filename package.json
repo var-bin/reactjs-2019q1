@@ -12,7 +12,9 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors",
     "start": "webpack-dev-server --env.NODE_ENV=development --open",
-    "build": "webpack -p --env.NODE_ENV=production"
+    "build": "webpack -p --env.NODE_ENV=production",
+    "e2e": "cypress",
+    "e2e:open": "cypress open"
   },
   "repository": {
     "type": "git",
