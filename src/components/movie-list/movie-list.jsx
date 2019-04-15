@@ -180,7 +180,7 @@ export const MovieList = () => {
   }];
 
   return (
-    <div className="container">
+    <div className="container" data-cy="movie-list">
       <div className="columns is-multiline">
         <Movies moviesData={moviesData} />
       </div>
