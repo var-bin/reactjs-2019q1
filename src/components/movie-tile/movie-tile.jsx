@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { MovieGenre } from '../movie-genre';
+
 export const MovieTile = (props) => {
   const {
     movieData: {
@@ -12,10 +14,10 @@ export const MovieTile = (props) => {
   } = props;
 
   const MovieGenres = () => genres.map(genre => (
-    <a href={`#${genre}`} key={`${id}-${genre}`}>
-      &nbsp;#
-      {genre}
-    </a>
+    <MovieGenre
+      genre={genre}
+      key={`${id}-${genre}`}
+    />
   ));
 
   // Uncomment the line bellow for testing `ErrorBoundary` component
@@ -24,7 +26,7 @@ export const MovieTile = (props) => {
   return (
     <div className="card">
       <div className="card-image">
-        <figure className="image is-4by3">
+        <figure className="image is-2by3">
           <img src={imgPath} alt="Alt text" />
         </figure>
       </div>
@@ -43,4 +45,4 @@ export const MovieTile = (props) => {
       </div>
     </div>
   );
-}
+};

@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieGenre component: Should have right text: 1`] = `"<a href=\\"#my awesome genre\\" class=\\"is-inline-block\\"> #my awesome genre</a>"`;

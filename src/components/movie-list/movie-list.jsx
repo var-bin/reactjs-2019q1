@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { MovieTile } from '../movie-tile';
+import { Movies } from '../movies';
 
 export const MovieList = () => {
   // @TODO Mocked data. Will be replaced after redux implementing
@@ -179,16 +179,10 @@ export const MovieList = () => {
     ]
   }];
 
-  const MovieListLocal = () => moviesData.map(movieData => (
-    <div className="column is-one-quarter" key={movieData.id}>
-      <MovieTile movieData={movieData} />
-    </div>
-  ));
-
   return (
-    <div className="container">
+    <div className="container" data-cy="movie-list">
       <div className="columns is-multiline">
-        <MovieListLocal />
+        <Movies moviesData={moviesData} />
       </div>
     </div>
   );
