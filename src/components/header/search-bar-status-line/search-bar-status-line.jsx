@@ -12,7 +12,7 @@ export function SearchBarStatusLine() {
       </div>
       <div className="column search-bar-status-line__">
         <div className="columns is-vcentered">
-          <div className="column">Search by: </div>
+          <div className="column">Sort by: </div>
           <div className="column">
             <button type="button" className="button is-primary">
               Release Date
