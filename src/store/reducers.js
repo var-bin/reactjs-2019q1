@@ -46,7 +46,7 @@ export function movies(state = [], action) {
 export function sortByFilter(state = SORT_BY.RELEASE_DATE, action) {
   switch (action.type) {
     case SET_SORT_BY_FILTER:
-      return action.filter;
+      return action.payload.filter;
     default:
       return state;
   }
