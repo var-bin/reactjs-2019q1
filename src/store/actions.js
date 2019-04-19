@@ -14,27 +14,35 @@ export const REMOVE_MOVIE_FROM_FAVORITE = 'REMOVE_MOVIE_FROM_FAVORITE';
 export function setSortByFilter(filter) {
   return {
     type: SET_SORT_BY_FILTER,
-    filter
+    payload: {
+      filter
+    }
   };
 }
 
 export function setSearchByFilter(filter) {
   return {
     type: SET_SEARCH_BY_FILTER,
-    filter
+    payload: {
+      filter
+    }
   };
 }
 
 export function addMovieToFavorite(movieId) {
   return {
     type: ADD_MOVIE_TO_FAVORITE,
-    movieId
+    payload: {
+      movieId
+    }
   };
 }
 
 export function removeMovieFromFavorite(movieId) {
   return {
     type: REMOVE_MOVIE_FROM_FAVORITE,
-    movieId
+    payload: {
+      movieId
+    }
   };
 }
