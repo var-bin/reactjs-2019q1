@@ -2,7 +2,9 @@ import {
   ADD_MOVIE_TO_FAVORITE,
   REMOVE_MOVIE_FROM_FAVORITE,
   SET_SORT_BY_FILTER,
-  SET_SEARCH_BY_FILTER
+  SET_SEARCH_BY_FILTER,
+  RECEIVE_MOVIES,
+  REQUEST_MOVIES
 } from './actions';
 
 import {
@@ -58,5 +60,27 @@ export function searchByFilter(state = SEARCH_BY.TITLE, action) {
       return action.filter;
     default:
       return state;
+  }
+}
+
+export function fetchMovies(state = {
+  movies: [],
+  isFetching: false
+}, action) {
+  switch (action.type) {
+    case REQUEST_MOVIES:
+      return {
+        ...state.movies,
+        isFetching: true
+      };
+    case RECEIVE_MOVIES:
+      return {
+        ...state.movies,
+        isFetching: false,
+        movies: action.payload.movies,
+        lastUpdated: action.payload.receiveAt
+      };
+    default:
+      return state.movies;
   }
 }

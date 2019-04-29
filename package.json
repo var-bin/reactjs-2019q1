@@ -36,12 +36,14 @@
   "homepage": "https://github.com/var-bin/reactjs-2019q1#readme",
   "dependencies": {
     "bulma": "^0.7.4",
+    "cross-fetch": "^3.0.2",
     "express": "^4.16.4",
     "react": "^16.8.4",
     "react-dom": "npm:@hot-loader/react-dom",
     "react-redux": "^6.0.1",
     "react-router-dom": "^5.0.0",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",

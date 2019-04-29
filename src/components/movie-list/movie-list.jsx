@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 
 import { Movies } from '../movies';
+import {
+  fetchMovies
+} from '../../store/actions';
 
-export const MovieList = () => {
+export const MovieListComponent = (props) => {
+  const movies = [];
   // @TODO Mocked data. Will be replaced after redux implementing
-  const moviesData = [{
+  /* const moviesData = [{
     id: 447365,
     title: 'Guardians of the Galaxy Vol. 3',
     tagline: '',
@@ -177,7 +182,11 @@ export const MovieList = () => {
       'Family',
       'Science Fiction'
     ]
-  }];
+  }]; */
+
+  const {
+    moviesData
+  } = props;
 
   return (
     <div className="container" data-cy="movie-list">
@@ -187,3 +196,11 @@ export const MovieList = () => {
     </div>
   );
 };
+
+const mapStateToProps = () => ({
+  moviesData: fetchMovies()
+});
+
+export const MovieList = connect(
+  mapStateToProps
+)(MovieListComponent);

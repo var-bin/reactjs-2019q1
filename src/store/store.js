@@ -11,7 +11,8 @@ import {
 const initialState = {
   searchByFilter: SEARCH_BY.TITLE,
   sortByFilter: SORT_BY.RELEASE_DATE,
-  movies: []
+  movies: [],
+  isFetching: false
 };
 
 export const store = createStore(
