@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
-import { setSortByFilter } from '../../../store/actions';
+import { setSortByFilterAsync } from '../../../store/actions';
 import { getSortByFilter } from '../../../store/selectors';
 
 import { SORT_BY } from '../../../constants';
@@ -58,7 +58,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  setSortBy: setSortByFilter
+  setSortBy: setSortByFilterAsync
 };
 
 export const SearchBarStatusLine = connect(
