@@ -2,7 +2,7 @@ import fetch from 'cross-fetch';
 
 import {
   MOVIES_API
-} from '../constants';
+} from '../../constants';
 
 /*
  * action types
@@ -25,6 +25,14 @@ export function setSortByFilter(filter) {
     payload: {
       filter
     }
+  };
+}
+
+export function setSortByFilterAsync(filter) {
+  return (dispatch) => {
+    setTimeout(() => {
+      dispatch(setSortByFilter(filter));
+    }, 2000);
   };
 }
 

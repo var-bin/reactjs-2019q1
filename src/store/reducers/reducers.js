@@ -5,12 +5,12 @@ import {
   SET_SEARCH_BY_FILTER,
   RECEIVE_MOVIES,
   REQUEST_MOVIES
-} from './actions';
+} from '../actions';
 
 import {
   SORT_BY,
   SEARCH_BY
-} from '../constants';
+} from '../../constants';
 
 export function movies(state = [], action) {
   switch (action.type) {
@@ -64,8 +64,7 @@ export function searchByFilter(state = SEARCH_BY.TITLE, action) {
 }
 
 export function fetchMovies(state = {
-  movies: [],
-  isFetching: false
+  movies: []
 }, action) {
   switch (action.type) {
     case REQUEST_MOVIES:
@@ -74,10 +73,12 @@ export function fetchMovies(state = {
         isFetching: true
       };
     case RECEIVE_MOVIES:
+      console.log('fetchMovies: ', state);
+
       return {
         ...state.movies,
         isFetching: false,
-        movies: action.payload.movies,
+        movies: action.payload.movies.data,
         lastUpdated: action.payload.receiveAt
       };
     default:

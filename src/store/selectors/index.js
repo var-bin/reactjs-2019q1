@@ -1,0 +1,3 @@
+export {
+  getSortByFilter
+} from './selectors';

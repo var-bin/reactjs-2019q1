@@ -3,7 +3,7 @@ import thunkMiddleware from 'redux-thunk';
 
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-const CONSTANTS = require('../../buildTools/constants');
+const CONSTANTS = require('../buildTools/constants');
 
 // for redux dev tools in dev mode
 export function enhanceComposeWithDevTools() {
