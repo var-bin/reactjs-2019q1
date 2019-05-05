@@ -1,22 +1,12 @@
 import { createStore } from 'redux';
 
-import { rootReducer } from './root-reducer';
-import { enhanceComposeWithDevTools } from './enhance-compose-with-dev-tools';
-
 import {
-  SEARCH_BY,
-  SORT_BY
-} from '../constants';
+  reducer
+} from './reducers';
 
-const initialState = {
-  searchByFilter: SEARCH_BY.TITLE,
-  sortByFilter: SORT_BY.RELEASE_DATE,
-  movies: [],
-  isFetching: false
-};
+import { enhanceComposeWithDevTools } from '../enhance-compose-with-dev-tools';
 
 export const store = createStore(
-  rootReducer,
-  initialState,
+  reducer,
   enhanceComposeWithDevTools()
 );
