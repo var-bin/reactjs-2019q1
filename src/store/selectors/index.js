@@ -1,3 +1,5 @@
 export {
-  getSortByFilter
+  getSortByFilter,
+  getMovies,
+  getIsFetching
 } from './selectors';
