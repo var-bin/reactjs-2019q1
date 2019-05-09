@@ -73,8 +73,6 @@ export function fetchMovies(state = {
         isFetching: true
       };
     case RECEIVE_MOVIES:
-      console.log('fetchMovies: ', state);
-
       return {
         ...state.movies,
         isFetching: false,
