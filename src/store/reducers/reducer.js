@@ -1,3 +1,5 @@
+import { combineReducers } from 'redux';
+
 import {
   SET_SORT_BY_FILTER,
   REQUEST_MOVIES,
@@ -9,11 +11,19 @@ import {
   SORT_BY
 } from '../../constants';
 
+import {
+  sortByFilter,
+  movies,
+  isFetching
+} from './reducers';
+
 const initialState = {
-  searchByFilter: SEARCH_BY.TITLE,
-  sortByFilter: SORT_BY.RELEASE_DATE,
-  movies: [],
-  isFetching: false
+  videoApp: {
+    searchByFilter: SEARCH_BY.TITLE,
+    sortByFilter: SORT_BY.RELEASE_DATE,
+    movies: [],
+    isFetching: false
+  }
 };
 
 export function reducer(state = initialState, action) {
@@ -39,3 +49,9 @@ export function reducer(state = initialState, action) {
       return state;
   }
 }
+
+export const reducer1 = combineReducers({
+  sortByFilter,
+  isFetching,
+  movies
+});

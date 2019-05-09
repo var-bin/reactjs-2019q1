@@ -14,32 +14,17 @@ import {
 
 export function movies(state = [], action) {
   switch (action.type) {
-    case ADD_MOVIE_TO_FAVORITE:
-      return state.map((movie) => {
-        if (movie.id === action.id) {
-          return [
-            ...state,
-            {
-              favorite: true
-            }
-          ];
-        }
+    case RECEIVE_MOVIES:
+      return action.payload.movies.data;
+    default:
+      return state;
+  }
+}
 
-        return state;
-      });
-    case REMOVE_MOVIE_FROM_FAVORITE:
-      return state.map((movie) => {
-        if (movie.id === action.id) {
-          return [
-            ...state,
-            {
-              favorite: false
-            }
-          ];
-        }
-
-        return state;
-      });
+export function isFetching(state = false, action) {
+  switch (action.type) {
+    case RECEIVE_MOVIES:
+      return true;
     default:
       return state;
   }
@@ -48,7 +33,9 @@ export function movies(state = [], action) {
 export function sortByFilter(state = SORT_BY.RELEASE_DATE, action) {
   switch (action.type) {
     case SET_SORT_BY_FILTER:
-      return action.payload.filter;
+      return {
+        sortByFilter: action.payload.filter
+      };
     default:
       return state;
   }

@@ -2,13 +2,15 @@ export {
   movies,
   sortByFilter,
   searchByFilter,
-  fetchMovies
+  fetchMovies,
+  isFetching
 } from './reducers';
 
 export {
-  rootReducer,
+  rootReducer
 } from './root-reducer';
 
 export {
-  reducer
+  reducer,
+  reducer1
 } from './reducer';

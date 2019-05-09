@@ -1,12 +1,13 @@
 import { createStore } from 'redux';
 
 import {
-  reducer
+  reducer,
+  reducer1
 } from './reducers';
 
 import { enhanceComposeWithDevTools } from '../enhance-compose-with-dev-tools';
 
 export const store = createStore(
-  reducer,
+  reducer1,
   enhanceComposeWithDevTools()
 );
