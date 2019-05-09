@@ -2,8 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { Movies } from '../movies';
+import { Spinner } from '../spinner';
 
 import { fetchMovies } from '../../store/actions';
+
+import {
+  getMovies,
+  getIsFetching
+} from '../../store/selectors';
 
 class MovieListComponent extends Component {
   componentDidMount() {
@@ -16,23 +22,28 @@ class MovieListComponent extends Component {
 
   render() {
     const {
-      moviesData
+      moviesData,
+      isFetching
     } = this.props;
+
     return (
       <div className="container" data-cy="movie-list">
         <div className="columns is-multiline">
-          <Movies moviesData={moviesData} />
+          {
+            isFetching
+              ? <Movies moviesData={moviesData} />
+              : <Spinner />
+          }
         </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    moviesData: state.movies
-  };
-};
+const mapStateToProps = state => ({
+  moviesData: getMovies(state),
+  isFetching: getIsFetching(state)
+});
 
 export const MovieList = connect(
   mapStateToProps
