@@ -1,6 +1,4 @@
 import {
-  ADD_MOVIE_TO_FAVORITE,
-  REMOVE_MOVIE_FROM_FAVORITE,
   SET_SORT_BY_FILTER,
   SET_SEARCH_BY_FILTER,
   RECEIVE_MOVIES,
@@ -33,9 +31,7 @@ export function isFetching(state = false, action) {
 export function sortByFilter(state = SORT_BY.RELEASE_DATE, action) {
   switch (action.type) {
     case SET_SORT_BY_FILTER:
-      return {
-        sortByFilter: action.payload.filter
-      };
+      return action.payload.filter;
     default:
       return state;
   }
