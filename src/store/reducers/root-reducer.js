@@ -6,14 +6,6 @@ import {
   fetchMovies
 } from './reducers';
 
-/* export function rootReducer(state = initialState, action) {
-  return {
-    searchByFilter,
-    sortByFilter,
-    movies: fetchMovies
-  };
-} */
-
 export const rootReducer = combineReducers({
   searchByFilter,
   sortByFilter,
