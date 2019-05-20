@@ -14,7 +14,8 @@ import {
 import {
   sortByFilter,
   movies,
-  isFetching
+  isFetching,
+  searchByFilter
 } from './reducers';
 
 const initialState = {
@@ -53,5 +54,6 @@ export function reducer(state = initialState, action) {
 export const reducer1 = combineReducers({
   sortByFilter,
   isFetching,
-  movies
+  movies,
+  searchByFilter
 });
