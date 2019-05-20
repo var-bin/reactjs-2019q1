@@ -40,25 +40,21 @@ export function sortByFilter(state = SORT_BY.RELEASE_DATE, action) {
 export function searchByFilter(state = SEARCH_BY.TITLE, action) {
   switch (action.type) {
     case SET_SEARCH_BY_FILTER:
-      return action.filter;
+      return action.payload.filter;
     default:
       return state;
   }
 }
 
-export function fetchMovies(state = {
-  movies: []
-}, action) {
+export function fetchMovies(state = [], action) {
   switch (action.type) {
     case REQUEST_MOVIES:
       return {
-        ...state.movies,
-        isFetching: true
+        ...state.movies
       };
     case RECEIVE_MOVIES:
       return {
         ...state.movies,
-        isFetching: false,
         movies: action.payload.movies.data,
         lastUpdated: action.payload.receiveAt
       };
