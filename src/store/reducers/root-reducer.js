@@ -1,15 +1,15 @@
 import { combineReducers } from 'redux';
 
 import {
-  searchByFilter,
   sortByFilter,
+  movies,
   isFetching,
-  movies
+  searchByFilter
 } from './reducers';
 
 export const rootReducer = combineReducers({
-  searchByFilter,
   sortByFilter,
+  isFetching,
   movies,
-  isFetching
+  searchByFilter
 });

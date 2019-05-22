@@ -4,7 +4,7 @@ import {
   SET_SORT_BY_FILTER,
   REQUEST_MOVIES,
   RECEIVE_MOVIES
-} from '../actions';
+} from '../action-types';
 
 import {
   SEARCH_BY,
@@ -19,12 +19,10 @@ import {
 } from './reducers';
 
 const initialState = {
-  videoApp: {
-    searchByFilter: SEARCH_BY.TITLE,
-    sortByFilter: SORT_BY.RELEASE_DATE,
-    movies: [],
-    isFetching: false
-  }
+  searchByFilter: SEARCH_BY.TITLE,
+  sortByFilter: SORT_BY.RELEASE_DATE,
+  movies: [],
+  isFetching: false
 };
 
 export function reducer(state = initialState, action) {

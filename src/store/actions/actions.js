@@ -4,16 +4,14 @@ import {
   MOVIES_API
 } from '../../constants';
 
-/*
- * action types
- */
-
-export const SET_SORT_BY_FILTER = 'SET_SORT_BY_FILTER';
-export const SET_SEARCH_BY_FILTER = 'SET_SEARCH_BY_FILTER';
-export const ADD_MOVIE_TO_FAVORITE = 'ADD_MOVIE_TO_FAVORITE';
-export const REMOVE_MOVIE_FROM_FAVORITE = 'REMOVE_MOVIE_FROM_FAVORITE';
-export const REQUEST_MOVIES = 'REQUEST_MOVIES';
-export const RECEIVE_MOVIES = 'RECEIVE_MOVIES';
+import {
+  SET_SORT_BY_FILTER,
+  SET_SEARCH_BY_FILTER,
+  ADD_MOVIE_TO_FAVORITE,
+  REMOVE_MOVIE_FROM_FAVORITE,
+  REQUEST_MOVIES,
+  RECEIVE_MOVIES
+} from '../action-types';
 
 /*
  * action creators

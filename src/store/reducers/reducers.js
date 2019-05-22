@@ -3,7 +3,7 @@ import {
   SET_SEARCH_BY_FILTER,
   RECEIVE_MOVIES,
   REQUEST_MOVIES
-} from '../actions';
+} from '../action-types';
 
 import {
   SORT_BY,
