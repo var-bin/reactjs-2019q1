@@ -23,6 +23,8 @@ export function isFetching(state = false, action) {
   switch (action.type) {
     case RECEIVE_MOVIES:
       return true;
+    case REQUEST_MOVIES:
+      return false;
     default:
       return state;
   }
@@ -43,22 +45,5 @@ export function searchByFilter(state = SEARCH_BY.TITLE, action) {
       return action.payload.filter;
     default:
       return state;
-  }
-}
-
-export function fetchMovies(state = [], action) {
-  switch (action.type) {
-    case REQUEST_MOVIES:
-      return {
-        ...state.movies
-      };
-    case RECEIVE_MOVIES:
-      return {
-        ...state.movies,
-        movies: action.payload.movies.data,
-        lastUpdated: action.payload.receiveAt
-      };
-    default:
-      return state.movies;
   }
 }
