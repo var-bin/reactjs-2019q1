@@ -14,10 +14,10 @@ import {
 class MovieListComponent extends Component {
   componentDidMount() {
     const {
-      dispatch
+      onFetchMovies
     } = this.props;
 
-    dispatch(fetchMovies());
+    onFetchMovies();
   }
 
   render() {
@@ -45,6 +45,11 @@ const mapStateToProps = state => ({
   isFetching: getIsFetching(state)
 });
 
+const mapDispatchToProps = {
+  onFetchMovies: fetchMovies
+};
+
 export const MovieList = connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(MovieListComponent);
