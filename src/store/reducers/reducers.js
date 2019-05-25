@@ -1,14 +1,15 @@
 import {
+  SORT_BY,
+  SEARCH_BY
+} from 'app-constants';
+
+import {
   SET_SORT_BY_FILTER,
   SET_SEARCH_BY_FILTER,
   RECEIVE_MOVIES,
   REQUEST_MOVIES
-} from '../action-types';
+} from 'app-store/action-types';
 
-import {
-  SORT_BY,
-  SEARCH_BY
-} from '../../constants';
 
 export function movies(state = [], action) {
   switch (action.type) {
