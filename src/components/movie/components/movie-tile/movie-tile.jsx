@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { MovieGenre } from '../movie-genre';
+import { MovieGenre } from 'app-components/movie';
+
+import './movie-tile.scss';
 
 export const MovieTile = (props) => {
   const {
@@ -27,6 +29,9 @@ export const MovieTile = (props) => {
     <div className="card">
       <div className="card-image">
         <figure className="image is-2by3">
+          <span className="icon is-large">
+            <i className="fas fa-spinner fa-pulse" />
+          </span>
           <img src={imgPath} alt="Alt text" />
         </figure>
       </div>

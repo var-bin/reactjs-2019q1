@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { Movies } from '../movies';
-import { Spinner } from '../spinner';
+import {
+  getIsFetching
+} from 'app-store/selectors';
 
-import { fetchMovies } from '../../store/actions';
+import { Movies } from 'app-components/movie';
+import { Spinner } from 'app-components/spinner';
 
 import {
   getMovies,
-  getIsFetching
-} from '../../store/selectors';
+
+  fetchMovies
+} from './store';
 
 class MovieListComponent extends Component {
   componentDidMount() {
