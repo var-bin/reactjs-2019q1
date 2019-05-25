@@ -9,7 +9,6 @@ const devConfig = require('./buildTools/webpack.dev.config');
 const prodConfig = require('./buildTools/webpack.prod.config');
 
 module.exports = function (env) {
-  // Use env.<YOUR VARIABLE> here:
   console.warn('NODE_ENV: ', env.NODE_ENV);
 
   const envConfig = env.NODE_ENV === CONSTANTS.DEVELOPMENT_MODE
@@ -24,7 +23,13 @@ module.exports = function (env) {
       extensions: [
         '.js',
         '.jsx'
-      ]
+      ],
+      alias: {
+        'app-store': PATHS.APP_STORE,
+        'app-components': PATHS.APP_COMPONENTS,
+        'app-constants': PATHS.APP_CONSTANTS,
+        'app-assets': PATHS.APP_ASSETS
+      }
     },
     output: {
       filename: PATHS.FILENAME,
