@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
-import { setSortByFilterAsync } from '../../../store/actions';
-import { getSortByFilter } from '../../../store/selectors';
+import { SORT_BY } from 'app-constants';
 
-import { SORT_BY } from '../../../constants';
+import {
+  setSortBy,
+
+  getSortByFilter
+} from './store';
 
 import './search-bar-status-line.styles.scss';
 
 function SearchBarStatusLineComponent(props) {
   const {
-    setSortBy,
+    setSortByFilter,
     sortBy
   } = props;
-
-  /* const [sortBy, setSortBy] = useState(SORT_BY.RELEASE_DATE);
-  const [moviesFound, setMoviesFound] = useState(0); */
 
   const releaseDateClass = sortBy === SORT_BY.RELEASE_DATE
     ? 'is-primary'
@@ -38,12 +38,12 @@ function SearchBarStatusLineComponent(props) {
         <div className="columns is-vcentered">
           <div className="column">Sort by: </div>
           <div className="column">
-            <button type="button" className={`button ${releaseDateClass}`} onClick={() => setSortBy(SORT_BY.RELEASE_DATE)}>
+            <button type="button" className={`button ${releaseDateClass}`} onClick={() => setSortByFilter(SORT_BY.RELEASE_DATE)}>
               Release Date
             </button>
           </div>
           <div className="column">
-            <button type="button" className={`button ${ratingClass}`} onClick={() => setSortBy(SORT_BY.RATING)}>
+            <button type="button" className={`button ${ratingClass}`} onClick={() => setSortByFilter(SORT_BY.RATING)}>
               Rating
             </button>
           </div>
@@ -58,7 +58,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  setSortBy: setSortByFilterAsync
+  setSortByFilter: setSortBy
 };
 
 export const SearchBarStatusLine = connect(

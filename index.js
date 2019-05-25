@@ -2,10 +2,11 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 
-import App from './src/App';
-import { store } from './src/store';
+import { store } from 'app-store/store';
 
-import './src/assets/styles.scss';
+import 'app-assets/styles.scss';
+
+import App from './src/App';
 
 const root = document.getElementById('app');
 
