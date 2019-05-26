@@ -1,4 +1,4 @@
-.image {
+.movie-tile {
   .fa-spinner {
     position: absolute;
     top: 0;
@@ -6,5 +6,19 @@
     bottom: 0;
     left: 0;
     margin: auto;
+  }
+
+  .movie-rating,
+  .movie-release {
+    position: absolute;
+    z-index: 5;
+  }
+
+  .movie-rating {
+    right: 0;
+  }
+
+  .movie-release {
+    top: 0;
   }
 }
