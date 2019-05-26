@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import { SORT_BY } from 'app-constants';
@@ -34,15 +34,15 @@ function SearchBarStatusLineComponent(props) {
           movies found
         </p>
       </div>
-      <div className="column search-bar-status-line__">
+      <div className="column search-bar-status-line__sort-by">
         <div className="columns is-vcentered">
-          <div className="column">Sort by: </div>
-          <div className="column">
+          <div className="column is-narrow search-bar-status-line__sort-by-title">Sort by: </div>
+          <div className="column is-narrow">
             <button type="button" className={`button ${releaseDateClass}`} onClick={() => setSortByFilter(SORT_BY.RELEASE_DATE)}>
               Release Date
             </button>
           </div>
-          <div className="column">
+          <div className="column is-narrow">
             <button type="button" className={`button ${ratingClass}`} onClick={() => setSortByFilter(SORT_BY.RATING)}>
               Rating
             </button>
