@@ -2,5 +2,7 @@ export {
   MovieGenre,
   MovieList,
   MovieTile,
-  Movies
+  Movies,
+  MovieRating,
+  MovieReleaseDate
 } from './components';

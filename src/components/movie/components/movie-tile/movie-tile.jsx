@@ -1,6 +1,10 @@
 import React from 'react';
 
-import { MovieGenre } from 'app-components/movie';
+import {
+  MovieGenre,
+  MovieRating,
+  MovieReleaseDate
+} from 'app-components/movie';
 
 import './movie-tile.scss';
 
@@ -11,7 +15,8 @@ export const MovieTile = (props) => {
       title,
       poster_path: imgPath,
       release_date: releaseDate,
-      genres
+      genres,
+      vote_count: rating
     }
   } = props;
 
@@ -26,14 +31,16 @@ export const MovieTile = (props) => {
   // throw new Error('Ooops, smth went wrong!!!');
 
   return (
-    <div className="card">
+    <div className="card movie-tile">
       <div className="card-image">
+        <MovieRating rating={rating} />
         <figure className="image is-2by3">
           <span className="icon is-large">
             <i className="fas fa-spinner fa-pulse" />
           </span>
           <img src={imgPath} alt="Alt text" />
         </figure>
+        <MovieReleaseDate releaseDate={releaseDate} />
       </div>
       <div className="card-content">
         <div className="content">
@@ -43,9 +50,6 @@ export const MovieTile = (props) => {
           <div>
             <MovieGenres />
           </div>
-          <time dateTime={releaseDate}>
-            {releaseDate}
-          </time>
         </div>
       </div>
     </div>

@@ -13,3 +13,11 @@ export {
 export {
   Movies
 } from './movies';
+
+export {
+  MovieRating
+} from './movie-rating';
+
+export {
+  MovieReleaseDate
+} from './movie-release-date';

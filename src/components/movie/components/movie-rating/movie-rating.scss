@@ -1,0 +1,11 @@
+.movie-rating {
+  display: flex;
+  align-items: center;
+  padding: 0.3em 0.3em 0;
+  flex-direction: column;
+
+  &__count {
+    padding: 0 0.2em;
+    font-weight: bold;
+  }
+}
