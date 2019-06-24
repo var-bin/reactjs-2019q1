@@ -1,10 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import { setSearchByFilter } from 'app-store/actions';
 
 import { SearchBarStatusLine } from '../search-bar-status-line';
 
 import './search-bar.styles.scss';
 
-export function SearchBar(props) {
+export function SearchBarComponent() {
   return (
     <div className="app__header-search-bar columns is-multiline">
       <div className="column is-12">
@@ -53,3 +56,16 @@ export function SearchBar(props) {
     </div>
   );
 }
+
+const mapStateToProps = state => ({
+  searchBy: state.searchByFilter
+});
+
+const mapDispatchToProps = {
+  setSearchBy: setSearchByFilter
+};
+
+export const SearchBar = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SearchBarComponent);

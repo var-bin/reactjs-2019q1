@@ -43,5 +43,11 @@
     "comma-dangle": ["error", "never"],
     "func-name-matching": ["error", "never"],
     "func-names": ["error", "never"]
-  }
+  },
+  "settings": {
+    "import/resolver": "webpack"
+  },
+  "plugins": [
+    "import/errors"
+  ]
 }

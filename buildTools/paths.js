@@ -6,5 +6,9 @@ module.exports = {
   PUBLIC_PATH: '/',
   FILENAME: '[name].bundle.js',
   HTML_TEMPLATE: './index.html',
-  FAVICON: './favicon.ico'
+  FAVICON: './favicon.ico',
+  APP_COMPONENTS: path.resolve(__dirname, '../src/components'),
+  APP_STORE: path.resolve(__dirname, '../src/store'),
+  APP_CONSTANTS: path.resolve(__dirname, '../src/constants'),
+  APP_ASSETS: path.resolve(__dirname, '../src/assets')
 };

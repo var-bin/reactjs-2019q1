@@ -2,11 +2,15 @@ import React from 'react';
 import { setConfig } from 'react-hot-loader';
 import { hot } from 'react-hot-loader/root';
 
+
+import {
+  MovieList
+} from 'app-components/movie';
+
 import {
   Header,
-  MovieList,
   ErrorBoundary
-} from './components';
+} from 'app-components';
 
 setConfig({
   ignoreSFC: true, // RHL will be __completely__ disabled for SFC
