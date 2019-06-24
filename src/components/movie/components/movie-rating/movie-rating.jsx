@@ -8,13 +8,15 @@ export function MovieRating(props) {
   } = props;
 
   return (
-    <div className="movie-rating has-text-info is-size-4" title="Movie rating">
-      <span className="icon">
-        <i className="fas fa-star"></i>
-      </span>
-      <span className="movie-rating__count">
-        {rating}
-      </span>
+    <div className="movie-rating" title="Movie rating">
+      <div className="tag is-link">
+        <span className="icon">
+          <i className="fas fa-star"></i>
+        </span>
+        <span className="movie-rating__count">
+          {rating}
+        </span>
+      </div>
     </div>
   );
 }
