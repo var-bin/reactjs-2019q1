@@ -11,7 +11,7 @@ import {
 
 import './search-bar-status-line.styles.scss';
 
-function SearchBarStatusLineComponent(props) {
+export function SearchBarStatusLineComponent(props) {
   const {
     setSortByFilter,
     sortBy
@@ -38,12 +38,20 @@ function SearchBarStatusLineComponent(props) {
         <div className="columns is-vcentered">
           <div className="column is-narrow search-bar-status-line__sort-by-title">Sort by: </div>
           <div className="column is-narrow">
-            <button type="button" className={`button ${releaseDateClass}`} onClick={() => setSortByFilter(SORT_BY.RELEASE_DATE)}>
+            <button
+              type="button"
+              className={`button ${releaseDateClass}`}
+              onClick={() => setSortByFilter(SORT_BY.RELEASE_DATE)}
+            >
               Release Date
             </button>
           </div>
           <div className="column is-narrow">
-            <button type="button" className={`button ${ratingClass}`} onClick={() => setSortByFilter(SORT_BY.RATING)}>
+            <button
+              type="button"
+              className={`button ${ratingClass}`}
+              onClick={() => setSortByFilter(SORT_BY.RATING)}
+            >
               Rating
             </button>
           </div>

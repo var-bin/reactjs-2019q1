@@ -2,6 +2,8 @@
 // For a detailed explanation regarding each configuration property, visit:
 // https://jestjs.io/docs/en/configuration.html
 
+const PATHS = require('./buildTools/paths');
+
 module.exports = {
   // Automatically clear mock calls and instances between every test
   clearMocks: true,
@@ -41,7 +43,8 @@ module.exports = {
     'app-store': '<rootDir>/src/store',
     'app-components': '<rootDir>/src/components',
     'app-constants': '<rootDir>/src/constants',
-    'app-assets': '<rootDir>/src/assets'
+    'app-assets': '<rootDir>/src/assets',
+    'app-mocks': '<rootDir>/__mocks__'
   },
 
   moduleDirectories: [

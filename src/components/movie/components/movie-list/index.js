@@ -1,1 +1,4 @@
-export { MovieList } from './movie-list';
+export {
+  MovieList,
+  MovieListComponent
+} from './movie-list';
