@@ -1,36 +1,33 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { MovieList } from './movie-list';
-import { Movies } from '../movies';
-import { moviesData } from '../../../__mocks__/moviesData';
+import {
+  MovieListComponent,
+} from './movie-list';
+
+import { moviesData } from 'app-mocks';
 
 describe('MovieList component:', () => {
   let wrapper;
 
-  beforeEach(() => {
-    wrapper = shallow(
-      <div>
-        <MovieList />
-      </div>
-    );
-  });
+  const onFetchMovies = jest.fn();
+  const isFetching = false;
 
-  it('Should render without errors:', () => {
-    expect(wrapper.find(MovieList)).toHaveLength(1);
-  });
+  function generateWrapper(passedProps) {
+    const defaultProps = {
+      onFetchMovies,
+      moviesData,
+      isFetching
+    };
 
-  it('Should render `Movies` without errors:', () => {
-    expect(wrapper.find(MovieList).dive().find(Movies)).toHaveLength(1);
-  });
+    const props = Object.assign({}, defaultProps, passedProps);
 
-  it('Should render `Movies` with right props:', () => {
-    const {
-      moviesData: moviesDataProps
-    } = wrapper.find(MovieList).dive().find(Movies).props();
+    return shallow(<MovieListComponent {...props} />);
+  }
 
-    const checkedMovieData = moviesDataProps.filter(movieData => movieData.id === moviesData[0].id);
+  xit('Should render without errors:', () => {
+    const wrapper = generateWrapper();
 
-    expect(checkedMovieData[0]).toEqual(moviesData[0]);
+    console.log(wrapper.find(MovieListComponent).html());
   });
 });

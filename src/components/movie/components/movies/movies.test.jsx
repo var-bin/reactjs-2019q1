@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 
 import { Movies } from './movies';
 import { MovieTile } from '../movie-tile';
-import { moviesData } from '../../../__mocks__/moviesData';
+import { moviesData } from 'app-mocks';
 
 describe('Movies component:', () => {
   let wrapper;

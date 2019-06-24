@@ -3,7 +3,8 @@ export {
 } from './movie-genre';
 
 export {
-  MovieList
+  MovieList,
+  MovieListComponent
 } from './movie-list';
 
 export {
