@@ -1,13 +1,28 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { SEARCH_BY } from 'app-constants';
+
 import { setSearchByFilter } from 'app-store/actions';
 
 import { SearchBarStatusLine } from '../search-bar-status-line';
 
 import './search-bar.styles.scss';
 
-export function SearchBarComponent() {
+export function SearchBarComponent(props) {
+  const {
+    setSearchBy,
+    searchBy
+  } = props;
+
+  const titleClass = searchBy === SEARCH_BY.TITLE
+    ? 'is-primary'
+    : 'is-light';
+
+  const genreClass = searchBy === SEARCH_BY.GENRE
+    ? 'is-primary'
+    : 'is-light';
+
   return (
     <div className="app__header-search-bar columns is-multiline">
       <div className="column is-12">
@@ -29,12 +44,20 @@ export function SearchBarComponent() {
                   <h5 className="title is-6 is-uppercase">search by</h5>
                 </div>
                 <div className="control">
-                  <button type="button" className="button is-primary is-uppercase">
+                  <button
+                    type="button"
+                    className={`button is-uppercase ${titleClass}`}
+                    onClick={() => setSearchBy(SEARCH_BY.TITLE)}
+                  >
                     title
                   </button>
                 </div>
                 <div className="control">
-                  <button type="button" className="button is-light is-uppercase">
+                  <button
+                    type="button"
+                    className={`button is-uppercase ${genreClass}`}
+                    onClick={() => setSearchBy(SEARCH_BY.GENRE)}
+                  >
                     genre
                   </button>
                 </div>
