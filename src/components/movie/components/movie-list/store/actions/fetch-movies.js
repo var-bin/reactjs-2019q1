@@ -14,7 +14,6 @@ export function fetchMovies() {
   return function (dispatch) {
     dispatch(requestMovies());
 
-    // replace API
     return fetch(`${MOVIES_API}/movies`)
       .then(
         response => response.json(),
