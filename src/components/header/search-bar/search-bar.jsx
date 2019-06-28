@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import { SEARCH_BY } from 'app-constants';
@@ -15,6 +15,8 @@ export function SearchBarComponent(props) {
     searchBy
   } = props;
 
+  const [searchValue, setSearchValue] = useState('');
+
   const titleClass = searchBy === SEARCH_BY.TITLE
     ? 'is-primary'
     : 'is-light';
@@ -22,6 +24,22 @@ export function SearchBarComponent(props) {
   const genreClass = searchBy === SEARCH_BY.GENRE
     ? 'is-primary'
     : 'is-light';
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    console.log('handleOnSubmit: ', searchValue, searchBy);
+
+    setSearchValue('');
+  };
+
+  const handleChange = (event) => {
+    setSearchValue(event.target.value);
+  };
+
+  const disableSearchButton = () => {
+    return searchValue === '';
+  };
 
   return (
     <div className="app__header-search-bar columns is-multiline">
@@ -32,9 +50,30 @@ export function SearchBarComponent(props) {
       </div>
       <div className="column is-12">
         <form className="app__header-search-bar-form">
-          <div className="field">
-            <div className="control">
-              <input type="text" className="input" />
+          <div className="columns is-multiline">
+            <div className="column is-10">
+              <div className="field">
+                <div className="control">
+                  <input
+                    type="text"
+                    className="input"
+                    onChange={handleChange}
+                    value={searchValue}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="column is-2">
+              <div className="control app__header-search-bar-form-button">
+                <button
+                  type="submit"
+                  className="button is-success is-uppercase"
+                  onClick={handleSubmit}
+                  disabled={disableSearchButton()}
+                >
+                  search
+                </button>
+              </div>
             </div>
           </div>
           <div className="columns is-multiline">
@@ -61,13 +100,6 @@ export function SearchBarComponent(props) {
                     genre
                   </button>
                 </div>
-              </div>
-            </div>
-            <div className="column is-one-quarter">
-              <div className="control">
-                <button type="button" className="button is-primary is-uppercase">
-                  search
-                </button>
               </div>
             </div>
           </div>
