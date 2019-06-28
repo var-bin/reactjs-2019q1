@@ -2,9 +2,8 @@
   align-self: center;
 }
 
-.app__header-search-bar-form {
-  .column:last-child {
-    display: flex;
-    justify-content: flex-end;
+.app__header-search-bar-form-button {
+  .button {
+    width: 100%;
   }
 }
