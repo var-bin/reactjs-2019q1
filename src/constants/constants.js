@@ -1,11 +1,11 @@
 export const SEARCH_BY = {
-  TITLE: 'TITLE',
-  GENRE: 'GENRE'
+  TITLE: 'title',
+  GENRE: 'genre'
 };
 
 export const SORT_BY = {
-  RELEASE_DATE: 'RELEASE_DATE',
-  RATING: 'RATING'
+  RELEASE_DATE: 'release_date',
+  RATING: 'rating'
 };
 
 export const MOVIES_API = 'https://reactjs-cdp.herokuapp.com';
