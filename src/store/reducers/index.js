@@ -2,7 +2,7 @@ export {
   movies,
   sortByFilter,
   searchByFilter,
-  isFetching
+  isLoaded
 } from './reducers';
 
 export {

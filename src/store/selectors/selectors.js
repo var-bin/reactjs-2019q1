@@ -1,1 +1,1 @@
-export const getIsFetching = state => state.isFetching;
+export const getIsFetching = state => state.isLoaded;

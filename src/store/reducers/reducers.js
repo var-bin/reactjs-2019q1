@@ -45,7 +45,7 @@ export function movies(state = [], action) {
   }
 }
 
-export function isFetching(state = false, action) {
+export function isLoaded(state = false, action) {
   switch (action.type) {
     case RECEIVE_MOVIES:
     case SET_SORT_BY_FILTER_DONE:
