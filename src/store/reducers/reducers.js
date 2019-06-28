@@ -5,6 +5,7 @@ import {
 
 import {
   SET_SORT_BY_FILTER,
+  SET_SORT_BY_FILTER_DONE,
   SET_SEARCH_BY_FILTER,
   RECEIVE_MOVIES,
   REQUEST_MOVIES
@@ -33,7 +34,7 @@ export function movies(state = [], action) {
   switch (action.type) {
     case RECEIVE_MOVIES:
       return action.payload.movies.data;
-    case SET_SORT_BY_FILTER:
+    case SET_SORT_BY_FILTER_DONE:
       const { filter } = action.payload;
 
       return filter === SORT_BY.RELEASE_DATE
@@ -47,8 +48,10 @@ export function movies(state = [], action) {
 export function isFetching(state = false, action) {
   switch (action.type) {
     case RECEIVE_MOVIES:
+    case SET_SORT_BY_FILTER_DONE:
       return true;
     case REQUEST_MOVIES:
+    case SET_SORT_BY_FILTER:
       return false;
     default:
       return state;
@@ -57,7 +60,7 @@ export function isFetching(state = false, action) {
 
 export function sortByFilter(state = '', action) {
   switch (action.type) {
-    case SET_SORT_BY_FILTER:
+    case SET_SORT_BY_FILTER_DONE:
       return action.payload.filter;
     default:
       return state;
