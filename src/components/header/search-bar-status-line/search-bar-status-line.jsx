@@ -94,11 +94,15 @@ export function SearchBarStatusLineComponent(props) {
   );
 }
 
-const mapStateToProps = state => ({
-  sortBy: getSortByFilter(state),
-  searchMoviesValue: getSearchMoviesValue(state),
-  foundMovies: getMovies(state)
-});
+const mapStateToProps = state => {
+  const searchMoviesValue = getSearchMoviesValue(state);
+
+  return {
+    sortBy: getSortByFilter(state),
+    searchMoviesValue,
+    foundMovies: searchMoviesValue !== '' && getMovies(state)
+  }
+};
 
 const mapDispatchToProps = {
   setSortByFilter: setSortBy
