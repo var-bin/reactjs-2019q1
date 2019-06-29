@@ -8,17 +8,8 @@
     margin: auto;
   }
 
-  .movie-rating,
-  .movie-release {
+  .card-header {
     position: absolute;
     z-index: 5;
-  }
-
-  .movie-rating {
-    right: 0;
-  }
-
-  .movie-release {
-    top: 0;
   }
 }
