@@ -1,0 +1,3 @@
+export {
+  moviesData
+} from './moviesData';
