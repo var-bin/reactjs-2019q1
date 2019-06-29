@@ -7,12 +7,16 @@ describe('SearchBarStatusLineComponent component:', () => {
   let wrapper;
 
   const sortBy = "test";
-  const setSortByFilter = () => {};
+  const setSortByFilter = jest.fn();
+  const foundMovies = [];
+  const searchMoviesValue = '';
 
   function generateWrapper(passedProps) {
     const defaultProps = {
       sortBy,
-      setSortByFilter
+      setSortByFilter,
+      foundMovies,
+      searchMoviesValue
     };
 
     const props = Object.assign({}, defaultProps, passedProps);
