@@ -1,5 +1,6 @@
 export {
-  getSortByFilter
+  getSortByFilter,
+  getSearchMoviesValue
 } from './selectors';
 
 export {
