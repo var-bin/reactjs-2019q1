@@ -1,3 +1,5 @@
+import fetch from 'cross-fetch';
+
 import {
   MOVIES_API
 } from 'app-constants';
