@@ -7,12 +7,19 @@ import { setSearchByFilter } from 'app-store/actions';
 
 import { SearchBarStatusLine } from '../search-bar-status-line';
 
+import {
+  getSearchByFilter,
+
+  searchMovies,
+} from './store';
+
 import './search-bar.styles.scss';
 
 export function SearchBarComponent(props) {
   const {
     setSearchBy,
-    searchBy
+    searchBy,
+    searchMovies
   } = props;
 
   const [searchValue, setSearchValue] = useState('');
@@ -29,6 +36,8 @@ export function SearchBarComponent(props) {
     event.preventDefault();
 
     console.log('handleOnSubmit: ', searchValue, searchBy);
+
+    searchMovies(searchValue, searchBy);
 
     setSearchValue('');
   };
@@ -113,11 +122,12 @@ export function SearchBarComponent(props) {
 }
 
 const mapStateToProps = state => ({
-  searchBy: state.searchByFilter
+  searchBy: getSearchByFilter(state)
 });
 
 const mapDispatchToProps = {
-  setSearchBy: setSearchByFilter
+  setSearchBy: setSearchByFilter,
+  searchMovies
 };
 
 export const SearchBar = connect(

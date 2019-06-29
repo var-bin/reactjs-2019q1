@@ -8,7 +8,8 @@ import {
   SET_SORT_BY_FILTER_DONE,
   SET_SEARCH_BY_FILTER,
   RECEIVE_MOVIES,
-  REQUEST_MOVIES
+  REQUEST_MOVIES,
+  SET_SEARCH_MOVIES_VALUE
 } from 'app-store/action-types';
 
 const sortByVoteCount = (itemA, itemB) => {
@@ -71,6 +72,15 @@ export function searchByFilter(state = SEARCH_BY.TITLE, action) {
   switch (action.type) {
     case SET_SEARCH_BY_FILTER:
       return action.payload.filter;
+    default:
+      return state;
+  }
+}
+
+export function searchMoviesValue(state = '', action) {
+  switch (action.type) {
+    case SET_SEARCH_MOVIES_VALUE:
+      return action.payload.searchValue;
     default:
       return state;
   }
