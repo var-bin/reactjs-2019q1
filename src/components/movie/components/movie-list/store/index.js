@@ -1,5 +1,7 @@
 export {
-  fetchMovies
+  fetchMovies,
+  receiveMovies,
+  requestMovies
 } from './actions';
 
 export {
