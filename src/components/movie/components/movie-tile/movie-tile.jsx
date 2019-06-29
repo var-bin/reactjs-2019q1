@@ -2,9 +2,15 @@ import React from 'react';
 
 import {
   MovieGenre,
-  MovieRating,
+} from '../movie-genre';
+
+import {
+  MovieRating
+} from '../movie-rating';
+
+import {
   MovieReleaseDate
-} from 'app-components/movie';
+} from '../movie-release-date';
 
 import './movie-tile.scss';
 
