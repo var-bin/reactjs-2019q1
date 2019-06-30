@@ -1,11 +1,7 @@
-export {
-  movies,
-  sortByFilter,
-  searchByFilter,
-  isLoaded,
-  searchMoviesValue
-} from './reducers';
+export { isLoaded } from './is-loaded';
+export { movies } from './movies';
+export { searchByFilter } from './search-by-filter';
+export { searchMoviesValue } from './search-movies-value';
+export { sortByFilter } from './sort-by-filter';
 
-export {
-  rootReducer
-} from './root-reducer';
+export { rootReducer } from './root-reducer';
