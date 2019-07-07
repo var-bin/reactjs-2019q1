@@ -25,10 +25,10 @@ module.exports = function (env) {
         '.jsx'
       ],
       alias: {
-        'app-store': PATHS.APP_STORE,
         'app-components': PATHS.APP_COMPONENTS,
         'app-constants': PATHS.APP_CONSTANTS,
-        'app-assets': PATHS.APP_ASSETS
+        'app-assets': PATHS.APP_ASSETS,
+        'app-store': PATHS.APP_STORE,
       }
     },
     output: {
