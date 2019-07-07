@@ -14,6 +14,7 @@ module.exports = {
     '!**/node_modules/**',
     '!**/vendor/**',
     '!src/**/*.e2e.{js,jsx}',
+    '!src/**/selectors/*.js',
   ],
 
   // The directory where Jest should output its coverage files
@@ -43,7 +44,8 @@ module.exports = {
     '<rootDir>/dist',
     '<rootDir>/coverage',
     '<rootDir>/cypress',
-    '<rootDir>/.cache'
+    '<rootDir>/.cache',
+    '<rootDir>/src/enhance-compose-with-dev-tools.js'
   ],
 
   // Indicates whether each individual test should be reported during the run
