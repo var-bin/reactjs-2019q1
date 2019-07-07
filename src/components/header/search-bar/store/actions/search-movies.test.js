@@ -1,36 +1,59 @@
-import configureStore from 'redux-mock-store';
+import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
-import {
-  MOVIES_API,
-  SEARCH_BY
-} from 'app-constants';
+import { moviesData } from 'app-mocks';
+import { fetchMock } from 'app-mocks/fetchMock';
 
 import {
-  receiveMovies,
-  requestMovies
-} from 'app-components/movie/components/movie-list/store';
-
-import { setSearchMoviesValue } from './set-search-movies-value';
+  REQUEST_MOVIES,
+  RECEIVE_MOVIES,
+  SET_SEARCH_MOVIES_VALUE
+} from 'app-store/action-types';
 
 import { searchMovies } from './search-movies';
 
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
+
 describe('(Actions) searchMovies:', () => {
-  const middlewares = [thunk];
-  const mockStore = configureStore(middlewares);
+  const searchValue = 'searchValue';
 
-  it('Should dispatch `setSearchMoviesValue` action with ritght props', () => {
+  it('Should dispatch right actions', () => {
     const store = mockStore({});
-    const searchValue = 'searchValue';
 
-    // Return the promise
+    const expectedActions = [
+      { type: SET_SEARCH_MOVIES_VALUE },
+      { type: REQUEST_MOVIES },
+      { type: RECEIVE_MOVIES }
+    ];
+
     return store.dispatch(searchMovies(searchValue))
       .then(() => {
-        const actions = store.getActions();
-
-        console.log('actions: ', actions);
-
-        // expect(actions[0]).toEqual(setSearchMoviesValue(searchValue));
+        expect(store.getActions()).toMatchObject(expectedActions);
       });
+  });
+
+  it('should fetch search data', () => {
+    const expected = {
+      movies: moviesData
+    };
+
+    const resolveJson = {
+      json: () => moviesData
+    };
+
+    fetchMock(Promise.resolve(resolveJson));
+
+    const store = mockStore({
+      movies: []
+    });
+
+    return store.dispatch(searchMovies(searchValue))
+      .then((data) => {
+        const { payload, type } = data;
+
+        expect(payload.movies).toEqual(expected.movies);
+        expect(type).toEqual(RECEIVE_MOVIES);
+    })
   });
 });
