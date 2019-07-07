@@ -21,15 +21,15 @@ describe('App component:', () => {
     );
   });
 
-  xit('Should render `Header` without errors:', () => {
+  it('Should render `Header` without errors:', () => {
     expect(wrapper.find(Header)).toHaveLength(1);
   });
 
-  xit('Should render `MovieList` without errors:', () => {
+  it('Should render `MovieList` without errors:', () => {
     expect(wrapper.find(MovieList)).toHaveLength(1);
   });
 
-  xit('Should wrap `Header` and `MovieList` components into `ErrorBoundary` component:', () => {
+  it('Should wrap `Header` and `MovieList` components into `ErrorBoundary` component:', () => {
     expect(wrapper.find(Header).parents(ErrorBoundary)).toHaveLength(1);
     expect(wrapper.find(MovieList).parents(ErrorBoundary)).toHaveLength(1);
   });
