@@ -6,12 +6,17 @@ import {
   setSortByFilterDone
 } from './set-sort-by-filter-done';
 
-export function setSortBy(filter) {
+export function setSortByCreator(filter, setSortByFilterDone) {
   return (dispatch) => {
     dispatch(setSortByFilter());
 
-    setTimeout(() => {
-      dispatch(setSortByFilterDone(filter));
-    }, 2000);
+    setTimeout(() =>
+      dispatch(setSortByFilterDone(filter))
+    , 2000);
   };
 }
+
+export const setSortBy = (filter) => setSortByCreator(
+  filter,
+  setSortByFilterDone
+);
