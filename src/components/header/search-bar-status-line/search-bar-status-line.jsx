@@ -51,11 +51,12 @@ export function SearchBarStatusLineComponent(props) {
   const renderfoundMoviesInfo = () => {
     if (isSearchMoviesValueExisted) {
       return (
-        <div className="column">
+        <div
+          className="column"
+          data-ut-id="foundMoviesInfo"
+        >
           <p>
-            {getMoviesFound()}
-            &nbsp;
-            {movieMoviesWords()}
+            {`${getMoviesFound()} ${movieMoviesWords()}`}
           </p>
         </div>
       );
