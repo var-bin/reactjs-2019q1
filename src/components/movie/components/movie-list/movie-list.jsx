@@ -30,7 +30,10 @@ export class MovieListComponent extends React.Component {
     } = this.props;
 
     return (
-      <div className="container" data-cy="movie-list">
+      <div
+        className="container"
+        data-cy="movie-list"
+      >
         <div className="columns is-multiline">
           {
             isFetching
