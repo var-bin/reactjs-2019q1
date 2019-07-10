@@ -1,4 +1,5 @@
-import fetch from 'cross-fetch';
+// because of jest errors
+import 'cross-fetch/polyfill';
 
 import {
   MOVIES_API
