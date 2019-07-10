@@ -1,17 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import {
-  MovieListComponent,
-} from './movie-list';
+import { moviesData } from 'app-mocks/moviesData';
+import { Spinner } from 'app-components/spinner';
+import { Movies } from 'app-components/movie';
 
-import { moviesData } from 'app-mocks';
+import { MovieListComponent } from './movie-list';
 
-describe('MovieList component:', () => {
+describe('(Component) MovieList:', () => {
   let wrapper;
 
-  const onFetchMovies = jest.fn();
   const isFetching = false;
+  const onFetchMovies = jest.fn().mockImplementation(() => {
+    return moviesData;
+  });
 
   function generateWrapper(passedProps) {
     const defaultProps = {
@@ -25,9 +27,29 @@ describe('MovieList component:', () => {
     return shallow(<MovieListComponent {...props} />);
   }
 
-  xit('Should render without errors:', () => {
-    const wrapper = generateWrapper();
+  beforeEach(() => {
+    wrapper = generateWrapper();
+  });
 
-    console.log(wrapper.find(MovieListComponent).html());
+  afterEach(() => {
+    onFetchMovies.mockClear();
+  });
+
+  it('should fetch movies data', () => {
+    expect(onFetchMovies).toHaveBeenCalledTimes(1);
+    expect(onFetchMovies).toHaveReturnedWith(moviesData);
+  });
+
+  it('should render `Spinner` component:', () => {
+    expect(wrapper.find(Spinner)).toHaveLength(1);
+  });
+
+  it('should render `Movies` component', () => {
+    const wrapper = generateWrapper({
+      isFetching: true
+    });
+
+    expect(wrapper.find(Movies)).toHaveLength(1);
+    expect(wrapper.find(Movies).prop('moviesData')).toEqual(moviesData);
   });
 });
