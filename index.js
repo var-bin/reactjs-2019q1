@@ -1,14 +1,18 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+
+import { store } from 'app-store/store';
+
+import 'app-assets/styles.scss';
 
 import App from './src/App';
 
-import './src/assets/styles.scss';
-
 const root = document.getElementById('app');
 
-render(<App />, root);
-
-// if (module.hot) {
-//   module.hot.accept();
-// }
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  root
+);

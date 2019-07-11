@@ -1,16 +1,28 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { SearchBar } from './search-bar';
+import { SearchBarComponent } from './search-bar';
 import { SearchBarStatusLine } from '../search-bar-status-line';
 
-describe('SearchBar component:', () => {
+describe('SearchBarComponent component:', () => {
   let wrapper;
 
+  const searchBy = "test";
+  const setSearchBy = jest.fn();
+
+  function generateWrapper(passedProps) {
+    const defaultProps = {
+      searchBy,
+      setSearchBy,
+    };
+
+    const props = Object.assign({}, defaultProps, passedProps);
+
+    return shallow(<SearchBarComponent {...props} />);
+  }
+
   beforeEach(() => {
-    wrapper = shallow(
-      <SearchBar />
-    );
+    wrapper = generateWrapper();
   });
 
   it('Should render without errors:', () => {

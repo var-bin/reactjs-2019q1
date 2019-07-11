@@ -1,13 +1,16 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import App from './App';
+import {
+  MovieList
+} from 'app-components/movie';
 
 import {
   Header,
-  MovieList,
   ErrorBoundary
-} from './components';
+} from 'app-components';
+
+import App from './App';
 
 describe('App component:', () => {
   let wrapper;

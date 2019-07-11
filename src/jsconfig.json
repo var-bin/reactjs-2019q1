@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "baseUrl": ".",
+    "paths": {
+      "app-assets": [
+        "./assets"
+      ],
+      "app-components": [
+        "./components"
+      ],
+      "app-constants": [
+        "./constants"
+      ],
+      "app-store": [
+        "./store"
+      ],
+      "app-mocks": [
+        "../__mocks__/movieData"
+      ]
+    }
+  },
+  "exclude": [
+    "dist",
+    "node_modules"
+  ],
+}

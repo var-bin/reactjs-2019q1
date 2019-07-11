@@ -36,12 +36,14 @@
   "homepage": "https://github.com/var-bin/reactjs-2019q1#readme",
   "dependencies": {
     "bulma": "^0.7.4",
+    "cross-fetch": "^3.0.2",
     "express": "^4.16.4",
     "react": "^16.8.4",
     "react-dom": "npm:@hot-loader/react-dom",
     "react-redux": "^6.0.1",
     "react-router-dom": "^5.0.0",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -64,7 +66,8 @@
     "enzyme-adapter-react-16": "^1.11.2",
     "eslint": "^5.15.1",
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.16.0",
+    "eslint-import-resolver-webpack": "^0.11.1",
+    "eslint-plugin-import": "^2.17.3",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
@@ -72,7 +75,6 @@
     "html-webpack-plugin": "^3.2.0",
     "jest": "^24.5.0",
     "jest-cli": "^24.7.1",
-    "jest-extended": "^0.11.1",
     "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.11.0",
     "postcss-loader": "^3.0.0",
@@ -80,6 +82,8 @@
     "prettier": "1.16.4",
     "react-hot-loader": "^4.8.0",
     "react-transform-hmr": "^1.0.4",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-mock-store": "^1.5.3",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "stylelint": "^9.10.1",
