@@ -17,7 +17,10 @@ export function MovieReleaseDate(props) {
         <span className="icon">
           <i className="fas fa-calendar"></i>
         </span>
-        <span className="movie-release__date">
+        <span
+          className="movie-release__date"
+          data-ut-id="movieReleaseDate"
+        >
           {releaseDate}
         </span>
       </time>

@@ -13,7 +13,10 @@ export function MovieRating(props) {
         <span className="icon">
           <i className="fas fa-star"></i>
         </span>
-        <span className="movie-rating__count">
+        <span
+          className="movie-rating__count"
+          data-ut-id="movieRatingCount"
+        >
           {rating}
         </span>
       </div>
