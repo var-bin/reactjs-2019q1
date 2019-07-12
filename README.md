@@ -31,3 +31,7 @@
   * A [simple e2e test](https://github.com/var-bin/reactjs-2019q1/blob/reactjs-2019q1-ht4/src/App.e2e.js)
   * [Config](https://github.com/var-bin/reactjs-2019q1/blob/reactjs-2019q1-ht4/.travis.yml) for [Travis CI](https://travis-ci.org/)
   * [Config](https://github.com/var-bin/reactjs-2019q1/blob/reactjs-2019q1-ht4/appveyor.yml) for [AppVeyor CI](https://travis-ci.org/)
+* ### HT5 - Flux + Redux:
+  * [Link to PR](https://github.com/var-bin/reactjs-2019q1/pull/13/files)
+  * Connect App to Redux
+  * Cover actions, reducers and new components by unit-tests
