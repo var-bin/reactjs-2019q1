@@ -17,7 +17,7 @@ test_script:
   - node --version
   - npm --version
   - yarn --version
-  - yarn test && node_modules/.bin/codecov
+  - yarn test && yarn codecov
 
 # cache npm modules
 cache:

@@ -14,7 +14,8 @@
     "start": "webpack-dev-server --env.NODE_ENV=development --open",
     "build": "webpack -p --env.NODE_ENV=production",
     "e2e": "cypress",
-    "e2e:open": "cypress open"
+    "e2e:open": "cypress open",
+    "codecov": "./node_modules/.bin/codecov"
   },
   "repository": {
     "type": "git",

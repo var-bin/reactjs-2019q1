@@ -20,4 +20,4 @@ matrix:
 fast_finish: true
 
 after_success:
-  - node_modules/.bin/codecov
+  - yarn codecov
