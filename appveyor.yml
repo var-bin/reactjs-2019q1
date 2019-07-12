@@ -16,7 +16,8 @@ test_script:
   # Output useful info for debugging.
   - node --version
   - npm --version
-  - yarn test
+  - yarn --version
+  - yarn test && node_modules/.bin/codecov
 
 # cache npm modules
 cache:
