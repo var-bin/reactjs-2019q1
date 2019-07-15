@@ -1,3 +1,5 @@
+$section-padding: 1rem 1.5rem !default;
+
 @import "~bulma/sass/utilities/_all";
 @import "~bulma/sass/base/_all";
 @import "~bulma/sass/elements/_all";
@@ -5,3 +7,4 @@
 @import "~bulma/sass/layout/_all";
 @import "~bulma/sass/components/level";
 @import "~bulma/sass/components/card";
+@import "~bulma/sass/components/navbar";

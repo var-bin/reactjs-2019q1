@@ -66,12 +66,12 @@ export function SearchBarStatusLineComponent(props) {
   }
 
   return (
-    <div className="search-bar-status-line has-background-grey-lighter columns is-vcentered">
+    <div className="search-bar-status-line has-background-grey-lighter columns is-vcentered is-tablet">
       {renderfoundMoviesInfo()}
       <div className="column search-bar-status-line__sort-by">
-        <div className="columns is-vcentered">
-          <div className="column is-narrow search-bar-status-line__sort-by-title">Sort by: </div>
-          <div className="column is-narrow">
+        <div className="columns is-vcentered is-tablet">
+          <div className="column search-bar-status-line__sort-by-title is-9">Sort by: </div>
+          <div className="column is-one-fifth">
             <button
               type="button"
               className={`button ${releaseDateClass}`}
@@ -80,7 +80,7 @@ export function SearchBarStatusLineComponent(props) {
               Release Date
             </button>
           </div>
-          <div className="column is-narrow">
+          <div className="column is-one-fifth">
             <button
               type="button"
               className={`button ${ratingClass}`}

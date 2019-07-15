@@ -35,8 +35,6 @@ export function SearchBarComponent(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    console.log('handleOnSubmit: ', searchValue, searchBy);
-
     searchMovies(searchValue, searchBy);
 
     setSearchValue('');
@@ -50,6 +48,9 @@ export function SearchBarComponent(props) {
     return searchValue === '';
   };
 
+  /**
+   * need to write some js for being able to use navbarBurger
+   */
   return (
     <div className="app__header-search-bar columns is-multiline">
       <div className="column is-12">

@@ -1,13 +1,11 @@
 import React from 'react';
 
-import { SearchBar } from './search-bar';
+import { NavBarComponent } from './nav-bar';
 
 export function Header() {
   return (
     <header className="app__header">
-      <div className="container">
-        <SearchBar />
-      </div>
+      <NavBarComponent />
     </header>
   );
 }

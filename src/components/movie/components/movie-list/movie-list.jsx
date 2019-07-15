@@ -26,7 +26,7 @@ export class MovieListComponent extends React.Component {
   render() {
     const {
       moviesData,
-      isFetching
+      isFetching,
     } = this.props;
 
     return (

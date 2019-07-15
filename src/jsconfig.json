@@ -17,6 +17,9 @@
       ],
       "app-mocks": [
         "../__mocks__/movieData"
+      ],
+      "app-pages": [
+        "./pages"
       ]
     }
   },

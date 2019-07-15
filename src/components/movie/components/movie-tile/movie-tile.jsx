@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 import {
   MovieGenre,
@@ -39,22 +40,24 @@ export const MovieTile = (props) => {
   return (
     <div className="card movie-tile">
       <div className="card-image">
-        <div className="card-header">
-          <div className="columns is-mobile is-multiline">
-            <div className="column">
-              <MovieReleaseDate releaseDate={releaseDate} />
-            </div>
-            <div className="column">
-              <MovieRating rating={rating} />
+        <Link to={`/movie/${id}`}>
+          <div className="card-header">
+            <div className="columns is-mobile is-multiline">
+              <div className="column">
+                <MovieReleaseDate releaseDate={releaseDate} />
+              </div>
+              <div className="column">
+                <MovieRating rating={rating} />
+              </div>
             </div>
           </div>
-        </div>
-        <figure className="image is-2by3">
-          <span className="icon is-large">
-            <i className="fas fa-spinner fa-pulse" />
-          </span>
-          <img src={imgPath} alt="Alt text" />
-        </figure>
+          <figure className="image is-2by3">
+            <span className="icon is-large">
+              <i className="fas fa-spinner fa-pulse" />
+            </span>
+            <img src={imgPath} alt="Alt text" />
+          </figure>
+        </Link>
       </div>
       <div className="card-content">
         <div className="content">

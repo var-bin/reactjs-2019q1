@@ -1,24 +1,16 @@
-export {
-  MovieGenre
-} from './movie-genre';
+export { MovieGenre } from './movie-genre';
 
 export {
   MovieList,
   MovieListComponent
 } from './movie-list';
 
-export {
-  MovieTile
-} from './movie-tile';
+export { MovieTile } from './movie-tile';
 
-export {
-  Movies
-} from './movies';
+export { Movies } from './movies';
 
-export {
-  MovieRating
-} from './movie-rating';
+export { MovieRating } from './movie-rating';
 
-export {
-  MovieReleaseDate
-} from './movie-release-date';
+export { MovieReleaseDate } from './movie-release-date';
+
+export { MovieDetailsComponent } from './movie-details';

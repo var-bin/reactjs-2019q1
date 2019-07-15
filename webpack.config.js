@@ -29,6 +29,7 @@ module.exports = function (env) {
         'app-constants': PATHS.APP_CONSTANTS,
         'app-assets': PATHS.APP_ASSETS,
         'app-store': PATHS.APP_STORE,
+        'app-pages': PATHS.APP_PAGES,
       }
     },
     output: {

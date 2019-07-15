@@ -5,5 +5,6 @@ export {
   MovieTile,
   Movies,
   MovieRating,
-  MovieReleaseDate
+  MovieReleaseDate,
+  MovieDetailsComponent
 } from './components';

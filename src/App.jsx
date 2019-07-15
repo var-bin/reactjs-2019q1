@@ -1,10 +1,17 @@
 import React from 'react';
 import { setConfig } from 'react-hot-loader';
 import { hot } from 'react-hot-loader/root';
+import {
+  Route,
+  Switch
+} from "react-router-dom";
 
 import {
-  MovieList
-} from 'app-components/movie';
+  HomeComponent,
+  SearchComponent,
+  PageNotFoundComponent,
+  MovieComponent
+} from 'app-pages';
 
 import {
   Header,
@@ -16,16 +23,20 @@ setConfig({
   pureRender: true // RHL will not change render method
 });
 
-const App = () => (
-  <ErrorBoundary>
-    <section className="section">
+const App = (props) => {
+  console.log('App: ', props);
+  return (
+    <ErrorBoundary>
       <Header />
 
-      <hr />
-
-      <MovieList />
-    </section>
-  </ErrorBoundary>
-);
+      <Switch>
+        <Route exact path="/" component={HomeComponent} />
+        <Route path="/search" component={SearchComponent} />
+        <Route path="/movie/:id" component={MovieComponent} />
+        <Route component={PageNotFoundComponent} />
+      </Switch>
+    </ErrorBoundary>
+  )
+};
 
 export default hot(App);
