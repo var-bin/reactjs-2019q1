@@ -20,7 +20,8 @@ module.exports = {
       chunks: false,
       chunkModules: false,
       children: false
-    }
+    },
+    historyApiFallback: true
   },
   plugins: [
     new webpack.DefinePlugin({

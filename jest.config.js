@@ -62,7 +62,8 @@ module.exports = {
     '^app-constants(.*)$': '<rootDir>/src/constants$1',
     '^app-store(.*)$': '<rootDir>/src/store$1',
     '^app-assets(.*)$': '<rootDir>/src/assets$1',
-    '^app-mocks(.*)$': '<rootDir>/__mocks__$1'
+    '^app-mocks(.*)$': '<rootDir>/__mocks__$1',
+    '^app-pages(.*)$': '<rootDir>/src/pages$1'
   },
 
   moduleDirectories: [
