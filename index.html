@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <base href="/">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>React starter app</title>
+    <title><%= htmlWebpackPlugin.options.title %></title>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel=<%= htmlWebpackPlugin.options.favicon %> />
   </head>
   <body>
     <main id="app"></main>
