@@ -1,5 +1,3 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const merge = require('webpack-merge');
 
 const PATHS = require('./buildTools/paths');
@@ -36,14 +34,6 @@ module.exports = function (env) {
       filename: PATHS.FILENAME,
       path: PATHS.DIST
     },
-    plugins: [
-      new CleanWebpackPlugin(),
-      new HtmlWebpackPlugin({
-        title: CONSTANTS.HTML_TITLE_DEVELOPMENT_MODE,
-        template: PATHS.HTML_TEMPLATE,
-        favicon: PATHS.FAVICON
-      })
-    ],
     module: {
       rules: [
         {
@@ -81,5 +71,5 @@ module.exports = function (env) {
         }
       ]
     }
-  }, envConfig);
+  }, envConfig(env));
 };
