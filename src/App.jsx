@@ -23,8 +23,7 @@ setConfig({
   pureRender: true // RHL will not change render method
 });
 
-const App = (props) => {
-  console.log('App: ', props);
+const App = () => {
   return (
     <ErrorBoundary>
       <Header />
@@ -32,7 +31,7 @@ const App = (props) => {
       <Switch>
         <Route exact path="/" component={HomeComponent} />
         <Route path="/search" component={SearchComponent} />
-        <Route path="/movie/:id" component={MovieComponent} />
+        <Route path="/movie/:movieId" component={MovieComponent} />
         <Route component={PageNotFoundComponent} />
       </Switch>
     </ErrorBoundary>
