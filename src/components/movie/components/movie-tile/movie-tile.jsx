@@ -55,7 +55,7 @@ export const MovieTile = (props) => {
             <span className="icon is-large">
               <i className="fas fa-spinner fa-pulse" />
             </span>
-            <img src={imgPath} alt="Alt text" />
+            <img src={imgPath} alt="Movie Poster" />
           </figure>
         </Link>
       </div>
