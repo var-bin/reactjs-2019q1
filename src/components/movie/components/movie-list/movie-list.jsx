@@ -14,7 +14,7 @@ import {
   fetchMovies
 } from './store';
 
-export class MovieListComponent extends React.Component {
+export class MovieListComponent extends Component {
   componentDidMount() {
     const {
       onFetchMovies
