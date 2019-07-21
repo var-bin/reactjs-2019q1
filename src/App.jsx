@@ -10,7 +10,7 @@ import {
   HomeComponent,
   SearchComponent,
   PageNotFoundComponent,
-  MovieComponent
+  MovieInfo
 } from 'app-pages';
 
 import {
@@ -31,7 +31,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={HomeComponent} />
         <Route path="/search" component={SearchComponent} />
-        <Route path="/movie/:movieId" component={MovieComponent} />
+        <Route path="/movie/:movieId" component={MovieInfo} />
         <Route component={PageNotFoundComponent} />
       </Switch>
     </ErrorBoundary>

@@ -1,1 +1,1 @@
-export { MovieComponent } from './movie';
+export { MovieInfo } from './movie';
