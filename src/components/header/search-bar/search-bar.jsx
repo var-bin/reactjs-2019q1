@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router'
 
 import { SEARCH_BY } from 'app-constants';
 
@@ -35,9 +36,11 @@ export function SearchBarComponent(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    searchMovies(searchValue, searchBy);
+    // <Redirect to="/dashboard" />
 
-    setSearchValue('');
+    // searchMovies(searchValue, searchBy);
+
+    // setSearchValue('');
   };
 
   const handleChange = (event) => {
@@ -48,9 +51,6 @@ export function SearchBarComponent(props) {
     return searchValue === '';
   };
 
-  /**
-   * need to write some js for being able to use navbarBurger
-   */
   return (
     <div className="app__header-search-bar columns is-multiline">
       <div className="column is-12">

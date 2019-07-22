@@ -53,7 +53,7 @@ export class MovieComponent extends Component {
         <hr/>
 
         <p>
-          Similar movies will be here soon!
+          <code>Similar movies will be here soon!</code>
         </p>
       </div>
     );
