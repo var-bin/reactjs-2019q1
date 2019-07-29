@@ -8,7 +8,7 @@ import {
 
 import {
   HomeComponent,
-  SearchComponent,
+  Search,
   PageNotFoundComponent,
   MovieInfo
 } from 'app-pages';
@@ -30,7 +30,7 @@ const App = () => {
 
       <Switch>
         <Route exact path="/" component={HomeComponent} />
-        <Route path="/search/:searchQuery" component={SearchComponent} />
+        <Route path="/search/:searchQuery" component={Search} />
         <Route path="/movie/:movieId" component={MovieInfo} />
         <Route component={PageNotFoundComponent} />
       </Switch>

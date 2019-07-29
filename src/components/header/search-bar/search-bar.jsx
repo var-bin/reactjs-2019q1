@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router'
+import { withRouter } from 'react-router'
 
 import { SEARCH_BY } from 'app-constants';
 
@@ -19,8 +19,7 @@ import './search-bar.styles.scss';
 export function SearchBarComponent(props) {
   const {
     setSearchBy,
-    searchBy,
-    searchMovies
+    searchBy
   } = props;
 
   const [searchValue, setSearchValue] = useState('');
@@ -36,11 +35,12 @@ export function SearchBarComponent(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // <Redirect to="/dashboard" />
+    const {
+      history
+    } = props;
 
-    // searchMovies(searchValue, searchBy);
-
-    // setSearchValue('');
+    setSearchValue('');
+    history.push(`/search/${searchValue}`);
   };
 
   const handleChange = (event) => {
@@ -134,4 +134,4 @@ const mapDispatchToProps = {
 export const SearchBar = connect(
   mapStateToProps,
   mapDispatchToProps
-)(SearchBarComponent);
+)(withRouter(SearchBarComponent));
