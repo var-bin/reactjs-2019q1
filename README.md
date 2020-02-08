@@ -1,3 +1,7 @@
+![Node.js CI](https://github.com/var-bin/reactjs-2019q1/workflows/Node.js%20CI/badge.svg)
+[![Build Status](https://travis-ci.org/var-bin/reactjs-2019q1.svg?branch=master)](https://travis-ci.org/var-bin/reactjs-2019q1)
+[![Build status](https://ci.appveyor.com/api/projects/status/eg1ql391rj0is3cw?svg=true)](https://ci.appveyor.com/project/var-bin/reactjs-2019q1)
+
 # reactjs-2019q1
 
 ## Init step
