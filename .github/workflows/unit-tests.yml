@@ -21,9 +21,7 @@ jobs:
     - name: Install Dependencies
       run: yarn
     - name: Test
-      run: |
-        echo The current brunch ${{ GITHUB_REF }}
-        yarn test
+      run: yarn test
     - name: Tests results
       run: echo Tests results
       if: success()
