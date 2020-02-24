@@ -4,6 +4,8 @@
 
 # reactjs-2019q1
 
+![find your movie example](./find-your-movie.min.jpg)
+
 ## Init step
 * `git clone https://github.com/var-bin/reactjs-2019q1.git`
 * `yarn`
