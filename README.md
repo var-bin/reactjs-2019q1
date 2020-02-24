@@ -1,5 +1,5 @@
 ![Unit Tests CI](https://github.com/var-bin/reactjs-2019q1/workflows/Unit%20Tests%20CI/badge.svg)
-[![Build Status](https://travis-ci.org/var-bin/reactjs-2019q1.svg?branch=master)](https://img.shields.io/travis/var-bin/reactjs-2019q1)
+[![Build Status](https://img.shields.io/travis/var-bin/reactjs-2019q1?label=Travis%20CI&logo=Travis&style=flat-square)](https://travis-ci.org/var-bin/reactjs-2019q1)
 [![Build status](https://ci.appveyor.com/api/projects/status/eg1ql391rj0is3cw?svg=true)](https://ci.appveyor.com/project/var-bin/reactjs-2019q1)
 
 # reactjs-2019q1
