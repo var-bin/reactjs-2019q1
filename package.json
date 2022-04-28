@@ -37,7 +37,7 @@
   "homepage": "https://github.com/var-bin/reactjs-2019q1#readme",
   "dependencies": {
     "bulma": "^0.7.4",
-    "cross-fetch": "^3.0.2",
+    "cross-fetch": "^3.1.5",
     "express": "^4.16.4",
     "react": "^16.8.4",
     "react-dom": "npm:@hot-loader/react-dom",
